@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block title %}
+About Us
+{% endblock %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us - The Learning Emporium</title>
+  <style>
+    /* ... All the existing styles ... */
+
+    /* Adjust column width to show team members in a row */
+    .row {
+      display: flex;
+      justify-content: center; /* Center the columns horizontally */
+    }
+
+    .column {
+      flex: 1; /* Allow each column to take equal space */
+    }
+
+    /* Make the team member images wider */
+    .card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Styles for the name, position, and email */
+    .name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .position {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .email {
+      font-size: 12px;
+      color: #007BFF;
+    }
+
+    /* Media query to display team members in a single column on smaller screens */
+    @media screen and (max-width: 650px) {
+      .row {
+        flex-direction: column;
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- About Us Section -->
+  <div class="about-section">
+    <h1>About Us Page</h1>
+    <p>Some text about who we are and what we do.</p>
+    <p>Resize the browser window to see that this page is responsive, by the way.</p>
+  </div>
+
+  <!-- Team Section with Scrollable Container -->
+  <h2 style="text-align:center">Our Team</h2>
+  <div class="team-container">
+    <div class="row">
+      <!-- Team Member 1 -->
+      <div class="column">
+        <div class="card">
+          <img src="{% static '/images/four.jpg' %}" alt="...">
+          <div class="container">
+            <p class="name">Jane Doe</p>
+            <p class="position">CEO & Founder</p>
+            <p class="email">Email: jane@example.com</p>
+            <!-- You can add additional details or links here if needed -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="column">
+        <div class="card">
+          <img src="{% static '/images/four.jpg' %}" alt="...">
+          <div class="container">
+            <p class="name">Mike Ross</p>
+            <p class="position">Art Director</p>
+            <p class="email">Email: mike@example.com</p>
+            <!-- You can add additional details or links here if needed -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="column">
+        <div class="card">
+          <img src="{% static '/images/four.jpg' %}" alt="...">
+          <div class="container">
+            <p class="name">John Doe</p>
+            <p class="position">Designer</p>
+            <p class="email">Email: john@example.com</p>
+            <!-- You can add additional details or links here if needed -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+{% endblock %}
